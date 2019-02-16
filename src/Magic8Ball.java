@@ -33,7 +33,7 @@ if (random==2) {
 	// -- tell the user "Maybe you should ask Google?"
 
 	// 8. If the random number is 3
-if (random==0) {
+if (random==3) {
 	JOptionPane.showMessageDialog(null, "HELL YA!");
 }
 	// -- write your own answer
