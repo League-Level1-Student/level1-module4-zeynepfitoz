@@ -116,6 +116,9 @@ buttonCount++;
 if(buttonPressed==firstButton) {
 	askQuestion("A hot dog is a colloquial term used for what food?", "What is Frankfurter?", 100);
 }
+if(buttonPressed==secondButton) {
+	askQuestion("A hot dog is a colloquial term used for what food?", "What is Frankfurter?", 100);
+}
 			// Call the askQuestion() method
  
 		// Complete the code in the askQuestion() method. When you play the game, the score should change.
@@ -125,7 +128,7 @@ if(buttonPressed==firstButton) {
 			// Call the askQuestion() method with a harder question
 
 		// Clear the text on the button that was pressed (set the button text to nothing)
-
+firstButton.setText("");
 	}
 
 	private void askQuestion(String question, String correctAnswer, int prizeMoney) {
@@ -138,19 +141,20 @@ if(buttonPressed==firstButton) {
 		// Stop the theme music when they have entered their response. Hint: use the sound variable 
 		sound.stop();
 		// If the answer is correct
-if(answer.equals(correctAnswer));
+if(answer.equals(correctAnswer)) {
 			// Increase the score by the prizeMoney
-
+score=score+prizeMoney;
 			// Pop up a message to tell the user they were correct
-
+JOptionPane.showMessageDialog(null, "You were CORRECT!");
+}
 		// Otherwise
 
 			// Decrement the score by the prizeMoney
-
+score=score-prizeMoney;
 			// Pop up a message to tell the user they were wrong and give them the correct answer
-
+JOptionPane.showMessageDialog(null, "You were wrong. The answer was What is Frankfurter.");
 		// Call the updateScore() method
-
+updateScore();
 	}
 
 	public void playJeopardyTheme() {
@@ -172,7 +176,7 @@ if(answer.equals(correctAnswer));
 	}
 
 	private void updateScore() {
-		scoreBox.setText("" + score);
+		scoreBox.setText("Your score is" + score);
 	}
 
 	private JPanel createHeader(String topicName) {
