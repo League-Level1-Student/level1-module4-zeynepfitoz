@@ -33,9 +33,9 @@ public class SimonSays extends KeyAdapter {
 		// 2. Add the four images that match keyboard keys like this: 
 		//images.put(new Integer(KeyEvent.VK_UP), "up.jpg");
 		images.put(new Integer(KeyEvent.VK_UP), "up.jpg");
-		images.put(new Integer(KeyEvent.VK_UP), "right.jpg");
-		images.put(new Integer(KeyEvent.VK_UP), "down.jpg");
-		images.put(new Integer(KeyEvent.VK_UP), "right.jpg");
+		images.put(new Integer(KeyEvent.VK_RIGHT), "right.jpg");
+		images.put(new Integer(KeyEvent.VK_DOWN), "down.jpg");
+		images.put(new Integer(KeyEvent.VK_LEFT), "left.jpg");
 		// 3. Use a JOptionPane to tell the user the rules: "Press the matching key when
 		// 'Simon says' otherwise press a different key"
 		JOptionPane.showMessageDialog(null, "Press the matching key when 'Simon says' otherwise press a different key");
@@ -65,16 +65,20 @@ int score = 0;
 			// 21. Use the speak method to tell the user they were correct
 		
 		// 22. Increment tries by 1
-		
+		tries++;
 		// 25. If tries is greater than 9 (or however many you want)...
-		
+		if(tries>9) {
+			JOptionPane.showInputDialog("Your score is "+ score);
+			System.exit(0);
+		}
 			// 26. Tell the user their score
 		
 			// 27. Exit the program
 
 		// 23. Dispose of the frame
-
+frame.dispose();
 		// 24. Call the showImage method to show a new image
+showImage();
 	}
 
 	private void showImage() {
